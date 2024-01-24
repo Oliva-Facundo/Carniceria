@@ -1,6 +1,6 @@
 import React from "react";
 
-const Info = ({ modal, handleModal }) => {
+const Info = ({ visible, handleModal }) => {
   const horarios = [
     { text: "Lunes: de 08:30AM a 13:30PM y de 17:30PM a 21:30PM" },
     { text: "Martes: de 08:30AM a 13:30PM y de 17:30PM a 21:30PM." },
@@ -12,25 +12,34 @@ const Info = ({ modal, handleModal }) => {
 
   return (
     <div
-      className={`w-full h-screen backdrop-blur-lg ${
-        modal ? "flex" : "hidden"
+      className={`w-full h-screen text-center ${
+        visible ? "flex" : "hidden"
       } items-center justify-center absolute top-0 z-50 `}
     >
-      <div className="bg-white p-6 rounded-2xl">
-        <button onClick={handleModal}>
+      <div className="bg-white p-6 shadow-[0_0_0_100vmax_rgba(0,0,0,0.3)] rounded-2xl max-sm:m-5">
+        <button
+          onClick={handleModal}
+          className="relative left-[45%] text-xl py-2 px-3 rounded-full text-redPrimary hover:bg-red-100 "
+        >
           <i className="ai-cross"></i>
         </button>
-        <h2>Horarios</h2>
-        {horarios.map((horario, index) => (
-          <p key={index}>{horario.text}</p>
-        ))}
-        <h2>Contacto</h2>
-        <a>
-          <i>icon</i> +545555555555{" "}
-        </a>
-        <a>
-          <i>icon2</i> +546666666666{" "}
-        </a>
+        <div className="flex flex-col gap-4">
+          <h2 className=" text-lg font-semibold">Horarios</h2>
+          <div>
+            {horarios.map((horario, index) => (
+              <p key={index}>{horario.text}</p>
+            ))}
+          </div>
+          <h2 className=" text-lg font-semibold">Contacto</h2>
+          <div className="flex flex-col">
+            <a className=" cursor-pointer text-green-400">
+              <i className="ai-whatsapp-fill"></i> +545555555555{" "}
+            </a>
+            <a className=" cursor-pointer text-sky-400">
+              <i className="ai-phone"></i> +546666666666{" "}
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

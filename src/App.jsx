@@ -1,23 +1,35 @@
-import React, { useState } from 'react'
-import { Header, Info } from './components'
+import React, { useState } from "react";
+import { Header, Info } from "./components";
 function App() {
-
   const [openNav, setOpenNav] = useState(false);
-  const [openModal, setOpenModal] = useState(false)
+  const [openModalInfo, setOpenModalInfo] = useState(false);
+  const [openLocation, setOpenLocation] = useState(false);
 
   const handleNav = () => {
     setOpenNav(!openNav);
   };
 
-  const handleModal = () => {
-    setOpenModal(!openModal)
-  }
+  const handleModalInfo = () => {
+    setOpenModalInfo(!openModalInfo);
+  };
+
+  const handleLocation = () => {
+    setOpenLocation(!openLocation);
+  };
+
   return (
     <>
-      <Header navOpen={openNav} onChangeNav={handleNav} modalOpen={handleModal}/>
+      <Header
+        navOpen={openNav}
+        onChangeNav={handleNav}
+        openModal={openModalInfo}
+        onChangeModal={handleModalInfo}
+        openLocation={openLocation}
+        onChangeLocation={handleLocation}
+      />
       <Info />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

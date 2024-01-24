@@ -9,7 +9,6 @@ export default {
       colors: {
         bluePrimary: "#041C74",
         redPrimary: "#DC0506",
-        prueba: "#7F7F7F"
       },
     },
   },
