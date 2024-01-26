@@ -5,7 +5,7 @@ import Location from "./Location";
 const Header = ({ navOpen, onChangeNav, openModal, onChangeModal, openLocation, onChangeLocation }) => {
   return (
     <>
-      <header className=" bg-gradient-to-r from-bluePrimary to-redPrimary flex items-center justify-between h-16">
+      <header className=" bg-gradient-to-r from-bluePrimary to-redPrimary flex items-center justify-between fixed w-full h-16">
         <h1 className=" text-3xl font-bold italic text-white pl-12">
           La Cabaña
         </h1>
@@ -40,7 +40,7 @@ const Header = ({ navOpen, onChangeNav, openModal, onChangeModal, openLocation, 
                 onClick={onChangeModal}
                 className="text-white cursor-pointer font-Barlow font-normal text-sm inline-block md:py-5 py-3"
               >
-                Horarios y Atencion
+                Horarios
               </button>
             </li>
             <li className="md:inline-block  md:ml-10 ml-5 md:my-0 my-6 border-b-2 border-transparent hover:border-white duration-300">

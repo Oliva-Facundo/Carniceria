@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Header, Info } from "./components";
+import { Header, Home } from "./components";
 function App() {
   const [openNav, setOpenNav] = useState(false);
   const [openModalInfo, setOpenModalInfo] = useState(false);
@@ -27,7 +27,7 @@ function App() {
         openLocation={openLocation}
         onChangeLocation={handleLocation}
       />
-      <Info />
+      <Home />
     </>
   );
 }
